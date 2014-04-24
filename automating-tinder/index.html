@@ -10,7 +10,7 @@
     <meta property="og:type" content="article" />  
     <meta property="article:published_time" content="2014-04-22" />
     
-    <meta property="og:description" content="I was introduced to the dating-app Tinder a couple of months back and the premise is simple: Like (swipe right) a person, based on the profile -- and if the person likes you back -- you're a match and you get to converse..."/>
+    <meta property="og:description" content="I was introduced to the mobile dating-app Tinder a couple of months back and the premise is simple: Like (swipe right) a person, based on the profile -- and if the person likes you back -- you're a match and you get to c..."/>
 
     
     <meta property="og:site_name" content="Venkatesh Nandakumar&#x27;s Blog">
@@ -80,7 +80,7 @@ ga('send', 'pageview');
             <h1 class="post-title">Automating Tinder</h1>
 
             <section class="post-content">
-                <p>I was introduced to the dating-app <a href="http://www.gotinder.com/">Tinder</a> a couple of months back and the premise is simple: Like (<em>swipe right</em>) a person, based on the profile -- and if the person likes you back -- you're a match and you get to converse with the person.</p>
+                <p>I was introduced to the mobile dating-app <a href="http://www.gotinder.com/">Tinder</a> a couple of months back and the premise is simple: Like (<em>swipe right</em>) a person, based on the profile -- and if the person likes you back -- you're a match and you get to converse with the person.</p>
 
 <p><img src="/content/images/2014/Apr/main_run.png" alt="Automating Tinder" /></p>
 
@@ -91,16 +91,16 @@ ga('send', 'pageview');
 <h5 id="psychologicalaspect">Psychological aspect</h5>
 
 <p>Tinder's best feature is that <a href="http://konigi.com/notebook/steve-jobs-saying-no">that it deliberately didn't add any</a>. <br />
-As a result, you were left with a lot of unanswered questions. <em>How many people swiped-left? What's your hit-ratio? How many more upcoming recommendations are there for my current settings?</em> This made is all the more mystical &amp; therefore engaging.</p>
+As a result, you were left with a lot of unanswered questions. <em>How many people swiped-left? What's your hit-ratio? How many more upcoming recommendations are there with my current settings?</em> This made is all the more mystical &amp; therefore engaging.</p>
 
-<p>Gradually Tinder became <a href="https://en.wikipedia.org/w/index.php?title=Tinder_%28application_software%29&amp;oldid=596722199#Users">less of a dating service</a> and more of a 'confidence boost' app. Tinder-dates are unheard of. Through matches, people felt more 'wanted'. Even I welcome female attention for things other than academic intelligence every now &amp; then and Tinder facilitated that.</p>
+<p>Gradually Tinder became <a href="https://en.wikipedia.org/w/index.php?title=Tinder_%28application_software%29&amp;oldid=596722199#Users">less of a dating service</a> and more of a 'confidence boost' app. Tinder-dates are unheard of. Through matches, people felt more 'wanted' and Tinder facilitated that.</p>
 
 <p>As far as social dynamics of Tinder goes, girls have an upper hand initially and be choosy -- to <em>swipe left</em> if you will. But once the match it done, it's upto the guy to initiate the conversation. <br />
-Given the generally low <em>hit-ratio</em> for males and even more so for <a href="http://blog.okcupid.com/index.php/your-race-affects-whether-people-write-you-back/">South Asian males ;)</a>, the best strategy for guys is to <em>swipe-right-all</em>. And <em>when</em> there is a match, decide if you want to initiate the conversation.</p>
+Given the generally low <em>hit-ratio</em> for males and even more so for <a href="http://blog.okcupid.com/index.php/your-race-affects-whether-people-write-you-back/">South Asian males ;)</a>, the best strategy for guys is to <em>swipe-right-all</em>. And <em>when</em> there is a match, decide if they want to initiate the conversation.</p>
 
 <p><img src="http://37.media.tumblr.com/tumblr_m94hpzQfSK1rof6ulo1_500.gif" alt="Swipe right all!" /></p>
 
-<div align="center" style="margin-bottom:15px;"><i><small>Swipe Right all! <a href="http://www.reddit.com/r/Tinder/comments/230jz4/this_is_how_most_guys_use_tinder/">Credits</a></small></i></div>
+<div align="center" style="margin-bottom:15px;"><i><small>How most guys use Tinder! <a href="http://www.reddit.com/r/Tinder/comments/230jz4/this_is_how_most_guys_use_tinder/">Credits</a></small></i></div>
 
 <h5 id="techstuff">Tech stuff</h5>
 
@@ -109,22 +109,22 @@ Given the generally low <em>hit-ratio</em> for males and even more so for <a hre
 <div align="center" style="margin-bottom:15px;">  
 <iframe width="200px" height="200px" src="http://www.youtube-nocookie.com/embed/d6wG_sAdP0U?rel=0&html5=1" frameborder="0" allowfullscreen></iframe><i><small>Amy Webb used her social-engineering skills to experiment with OkCupid</small></i></div>
 
-<p>I had not previously known on how to intercept <a href="https://en.wikipedia.org/wiki/REST">REST</a> calls from a mobile devices and this was an ample opportunity to increase my tech skill-set - while having fun - so I had more the reason to go this route.</p>
+<p>I had not previously known on how to intercept <a href="https://en.wikipedia.org/wiki/REST">REST</a> calls from a mobile device and this was an ample opportunity to increase my tech skill-set - while having fun - so I had more the reason to go this route.</p>
 
-<p>The first step was to intercept <code>API</code> calls. <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">This guide</a> was extremely helpful.  </p>
+<p>The first step was to intercept <code>REST API</code> calls. <a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">This guide</a> was extremely helpful.  </p>
 
 <div style="float:left;">  
 <a href="/content/images/2014/Apr/mitmproxy.png"><img style="display:inline;" src="/content/images/2014/Apr/mitmproxy.png" width="220px" /></a>  
 <a href="/content/images/2014/Apr/mitmproxy_recs_request.png"><img style="display:inline;" src="/content/images/2014/Apr/mitmproxy_recs_request.png" width="220px" /></a>  
 <a href="/content/images/2014/Apr/mitmproxy_recs_response.png"><img style="display:inline;" src="/content/images/2014/Apr/mitmproxy_recs_response.png" width="220px" /></a><div align="center" style="margin-bottom:15px;"><i><small>Intercepting and Analyzing Tinder REST calls using <a href="http://mitmproxy.org">mitmproxy</a></small></i></div></div>
 
-<p>Once that was done, I coded the <code>perl</code> script, which essentially replayed the intercepted <code>API</code> calls in a loop. <br />
-In simple terms:</p>
+<p>Once that was done, I coded a <code>perl</code> script, which essentially replayed the intercepted <code>API</code> calls in a loop. <br />
+In simple terms, the script did this:</p>
 
 <ol>
 <li>Get my list of recommendations (limit by 40) -- <code>get_forty()</code>  </li>
 <li>Like (<em>swipe-right</em>) each one of them -- <code>like_all()</code>  </li>
-<li>Wait for 5 seconds to not overwhelm the Tinder servers. (And also to not appear automated... <em>umm</em>..)  </li>
+<li>Wait for 5 seconds to not overwhelm the Tinder servers. (And avoid appearing automated... <em>sorry</em>..)  </li>
 <li>Go back to step 1.</li>
 </ol>
 
