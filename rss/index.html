@@ -1,9 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Venkatesh Nandakumar's Blog]]></title><description><![CDATA[I go by many names]]></description><link>http://venkatesh.ca/</link><generator>Ghost v0.4.0</generator><lastBuildDate>Tue, 22 Apr 2014 22:49:19 GMT</lastBuildDate><atom:link href="http://venkatesh.ca/rss/" rel="self" type="application/rss+xml"/><author><![CDATA[Venkatesh Nandakumar]]></author><ttl>60</ttl><item><title><![CDATA[War..]]></title><description><![CDATA[<p>..is never the answer.</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Venkatesh Nandakumar's Blog]]></title><description><![CDATA[I go by many names]]></description><link>http://blog.venkatesh.ca/</link><generator>Ghost v0.4.0</generator><lastBuildDate>Thu, 24 Apr 2014 02:42:35 GMT</lastBuildDate><atom:link href="http://blog.venkatesh.ca/rss/" rel="self" type="application/rss+xml"/><author><![CDATA[Venkatesh Nandakumar]]></author><ttl>60</ttl><item><title><![CDATA[Automating Tinder]]></title><description><![CDATA[<p>I was introduced to the mobile dating-app <a href='http://www.gotinder.com/' >Tinder</a> a couple of months back and the premise is simple: Like (<em>swipe right</em>) a person, based on the profile -- and if the person likes you back -- you're a match and you get to converse with the person.</p>
+
+<p><img src='http://blog.venkatesh.ca/content/images/2014/Apr/main_run.png'  alt="Automating Tinder" /></p>
+
+<div align="center" style="margin-bottom:15px;"><i><small>Automating Tinder</small></i></div>
+
+<p>The tinder app was quite revelationary to me, from a <a href='http://news.ycombinator.com/' >HN</a> perspective. A small feature (<a href='http://en.wikipedia.org/w/index.php?title=Orkut&amp;oldid=605311159' #Other_features">Crush List</a>) from a major established product (Orkut in its heyday) which had not gained sufficient traction could be spinned-off as a new product by itself -- as a sleek, fun to use, Facebook-social-graph based app.</p>
+
+<h5 id="psychologicalaspect">Psychological aspect</h5>
+
+<p>Tinder's best feature is that <a href='http://konigi.com/notebook/steve-jobs-saying-no' >that it deliberately didn't add any</a>. <br />
+As a result, you were left with a lot of unanswered questions. <em>How many people swiped-left? What's your hit-ratio? How many more upcoming recommendations are there with my current settings?</em> This made is all the more mystical &amp; therefore engaging.</p>
+
+<p>Gradually Tinder became <a href='https://en.wikipedia.org/w/index.php?title=Tinder_%28application_software%29&amp;oldid=596722199' #Users">less of a dating service</a> and more of a 'confidence boost' app. Tinder-dates are unheard of. Through matches, people felt more 'wanted' and Tinder facilitated that.</p>
+
+<p>As far as social dynamics of Tinder goes, girls have an upper hand initially and the liberty to be choosy -- to <em>swipe left</em> if you will. But once the match it done, it's upto the guy to initiate the conversation. <br />
+Given the generally low <em>hit-ratio</em> for males and even more so for <a href='http://blog.okcupid.com/index.php/your-race-affects-whether-people-write-you-back/' >South Asian males ;)</a>, the best strategy for guys is to <em>swipe-right-all</em>. And <em>when</em> there is a match, decide if they want to initiate the conversation.</p>
+
+<p><img src='http://37.media.tumblr.com/tumblr_m94hpzQfSK1rof6ulo1_500.gif'  alt="Swipe right all!" /></p>
+
+<div align="center" style="margin-bottom:15px;"><i><small>How most guys use Tinder! <a href='http://www.reddit.com/r/Tinder/comments/230jz4/this_is_how_most_guys_use_tinder/' >Credits</a></small></i></div>
+
+<h5 id="techstuff">Tech stuff</h5>
+
+<p>Slightly inspired by <a href='https://www.youtube.com/watch?v=d6wG_sAdP0U' >Amy Webb: How I hacked online dating</a>, I went about my strategy -- albeit in a bit more automated fashion.</p>
+
+<div align="center" style="margin-bottom:15px;">  
+<iframe width="200px" height="200px" src='http://www.youtube-nocookie.com/embed/d6wG_sAdP0U?rel=0&html5=1'  frameborder="0" allowfullscreen></iframe><i><small>Amy Webb used her social-engineering skills to experiment with OkCupid</small></i></div>
+
+<p>I had not previously known on how to intercept <a href='https://en.wikipedia.org/wiki/REST' >REST</a> calls from a mobile device and this was an ample opportunity to increase my tech skill-set - while having fun - so I had more the reason to go this route.</p>
+
+<p>The first step was to intercept <code>REST API</code> calls. <a href='http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/' >This guide</a> was extremely helpful.  </p>
+
+<div style="float:left;">  
+<a href='http://blog.venkatesh.ca/content/images/2014/Apr/mitmproxy.png' ><img style="display:inline;" src='http://blog.venkatesh.ca/content/images/2014/Apr/mitmproxy.png'  width="220px" /></a>  
+<a href='http://blog.venkatesh.ca/content/images/2014/Apr/mitmproxy_recs_request.png' ><img style="display:inline;" src='http://blog.venkatesh.ca/content/images/2014/Apr/mitmproxy_recs_request.png'  width="220px" /></a>  
+<a href='http://blog.venkatesh.ca/content/images/2014/Apr/mitmproxy_recs_response.png' ><img style="display:inline;" src='http://blog.venkatesh.ca/content/images/2014/Apr/mitmproxy_recs_response.png'  width="220px" /></a><div align="center" style="margin-bottom:15px;"><i><small>Intercepting and Analyzing Tinder REST calls using <a href='http://mitmproxy.org/' >mitmproxy</a></small></i></div></div>
+
+<p>Once that was done, I coded a <code>perl</code> script, which essentially replayed the intercepted <code>API</code> calls in a loop. <br />
+In simple terms, the script did this:</p>
+
+<ol>
+<li>Get my list of recommendations (limit by 40) -- <code>get_forty()</code>  </li>
+<li>Like (<em>swipe-right</em>) each one of them -- <code>like_all()</code>  </li>
+<li>Wait for 5 seconds to not overwhelm the Tinder servers. (And avoid appearing automated... <em>sorry</em>..)  </li>
+<li>Go back to step 1.</li>
+</ol>
+
+<p>The code is <a href='http://github.com/vnkatesh/tinder_hack' >available here</a>.</p>
+
+<p><img src='http://blog.venkatesh.ca/content/images/2014/Apr/code.png'  alt="" /></p>
+
+<div align="center" style="margin-bottom:15px;"><i><small>The 200-line perl code</small></i></div>
+
+<h5 id="result">Result</h5>
+
+<p>Well, seeing this is always enthralling:</p>
+
+<p><img src='http://blog.venkatesh.ca/content/images/2014/Apr/main_run.png'  alt="Here's your like. Here's your like. Everybody get's a like!" /></p>
+
+<div align="center" style="margin-bottom:15px;"><i><small>You get a like! You get a like! Everybody get's a like!</small></i></div>
+
+<p>But even with a very relaxed Tinder criterion setting, I exhausted my list of recommendations within the hour. <br />
+And new recommendations were made available only after every 24 hours. This probably gives an insight on how the Tinder-backend works (daily data-crunching and generation of recommendations? Maybe.) .</p>
+
+<p>But anyways, Tinder matches have been more frequent now -- and it feels that much more nicer to be 'wanted'.</p>
+
+<hr />
+
+<ul>
+<li>I had a quick look at the T&amp;C of Tinder. This doesn't violate them to the best of my knowledge.</li>
+<li>Couple of other technical notes <a href='https://github.com/vnkatesh/tinder_hack' >here</a></li>
+</ul>]]></description><link>http://blog.venkatesh.ca/automating-tinder/</link><guid isPermaLink="false">cba0acf4-ce47-4804-b657-e5d29303171f</guid><dc:creator><![CDATA[Venkatesh Nandakumar]]></dc:creator><pubDate>Wed, 23 Apr 2014 03:54:06 GMT</pubDate></item><item><title><![CDATA[War..]]></title><description><![CDATA[<p>..is never the answer.</p>
 
 <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Car_bomb_victim_in_Iraq.jpg/800px-Car_bomb_victim_in_Iraq.jpg'  alt="Iraq War Car Bomb Death" /></p>
 
-<p>#mlnw #carbomb #iraqwar #death</p>]]></description><link>http://venkatesh.ca/war/</link><guid isPermaLink="false">9b75a586-31d3-46a7-8bff-0de49c8ad33b</guid><dc:creator><![CDATA[Venkatesh Nandakumar]]></dc:creator><pubDate>Thu, 10 Apr 2014 16:10:08 GMT</pubDate></item><item><title><![CDATA[Hello! My new website is live!]]></title><description><![CDATA[<p>First off, thanks for dropping by. I'm going to make this short. I'm not much of a blogger, so don't expect too many updates here.</p>
+<p>#mlnw #carbomb #iraqwar #death</p>]]></description><link>http://blog.venkatesh.ca/war/</link><guid isPermaLink="false">9b75a586-31d3-46a7-8bff-0de49c8ad33b</guid><dc:creator><![CDATA[Venkatesh Nandakumar]]></dc:creator><pubDate>Thu, 10 Apr 2014 16:10:08 GMT</pubDate></item><item><title><![CDATA[Hello! My new website is live!]]></title><description><![CDATA[<p>First off, thanks for dropping by. I'm going to make this short. I'm not much of a blogger, so don't expect too many updates here.</p>
 
 <p>I'd like to name the wonderful services/technology I've used to bring this site up (and to whom I'm very thankful for!)</p>
 
@@ -18,4 +90,4 @@
 
 <p>For more updates from me, check out the links provided in the main page <a href='http://venkatesh.ca/' >http://venkatesh.ca</a></p>
 
-<p>Bye for now!</p>]]></description><link>http://venkatesh.ca/hello-my-new-website-is-live/</link><guid isPermaLink="false">06679fc5-97ff-42d9-9045-c500b6ceae24</guid><dc:creator><![CDATA[Venkatesh Nandakumar]]></dc:creator><pubDate>Fri, 31 Jan 2014 08:24:58 GMT</pubDate></item></channel></rss>
+<p>Bye for now!</p>]]></description><link>http://blog.venkatesh.ca/hello-my-new-website-is-live/</link><guid isPermaLink="false">06679fc5-97ff-42d9-9045-c500b6ceae24</guid><dc:creator><![CDATA[Venkatesh Nandakumar]]></dc:creator><pubDate>Fri, 31 Jan 2014 08:24:58 GMT</pubDate></item></channel></rss>
